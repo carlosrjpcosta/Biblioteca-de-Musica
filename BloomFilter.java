@@ -1,12 +1,10 @@
-package mpeiProject;
-
+package mpeiproject;
 public class BloomFilter {
-	
 	private int set[];
 	private int numHashs;
 	
 	public BloomFilter(int N, int numHashs) {
-		set = new int[N];
+		set = new int[optimalSize(N)];
 		this.numHashs = numHashs;
 	}
 	
@@ -33,7 +31,7 @@ public class BloomFilter {
 	}
 	
 	public int count(String elem) {
-		int min = 10000;
+		int min = Integer.MAX_VALUE;
 		
 		for (int i=1; i <= numHashs; i++) {
 			elem += i;
@@ -50,4 +48,6 @@ public class BloomFilter {
 		int hash = Math.abs(elem.hashCode());
 		return Math.abs(hash % set.length);
 	}
+	
+	private int optimalSize(int m) {  return (int) Math.ceil(((((m * Math.log(0.0005)) / Math.log(1 / Math.pow(2, Math.log(2))))))); }
 }

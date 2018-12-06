@@ -1,4 +1,5 @@
-package mpeiProject;
+package mpeiproject;
+
 import java.util.Set;
 import java.util.TreeSet;
 public class ShingleUtils {

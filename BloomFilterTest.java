@@ -1,4 +1,5 @@
-package mpeiProject;
+package mpeiproject;
+
 public class BloomFilterTest {
 
 	public static void main(String[] args) {
@@ -21,13 +22,6 @@ public class BloomFilterTest {
 			else System.out.println("Movie "+ movie+" is not in the set");
 		}
 		
-		System.out.println("\nChekes how many times a given movie appears");
-		String[] moviesRep = {"Ralph", "Creed II", "Ralp", "Creed II", "Venom", "Ralph", "Robin Wood"};
-	
-		for(String movie : moviesRep) {
-			bf.insert(movie);
-			System.out.println("Movie "+movie+" repeats "+ bf.count(movie)+" times");
-		}
-		
 	}
 }
+

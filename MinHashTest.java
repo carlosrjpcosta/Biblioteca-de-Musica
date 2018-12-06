@@ -1,7 +1,5 @@
-package mpeiProject;
-
+package mpeiproject;
 import java.util.Set;
-
 public class MinHashTest {
 	
 	public static void main(String[] args) {

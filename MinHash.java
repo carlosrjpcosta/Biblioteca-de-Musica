@@ -1,4 +1,4 @@
-package mpeiProject;
+package mpeiproject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -44,6 +44,14 @@ public class MinHash {
 		return newList;
 	}
 	
+	public static String formatString(String str) {
+		return str.toLowerCase().trim()
+									.replaceAll(" +", "")
+									.replaceAll("\t", "")
+									.replaceAll("\n","")
+									.replaceAll(" ", "");
+	}
+	
 	public int[] getStringHashSet(Set<String> shingles) {
 		
 		int[] hashValues = new int[shingles.size()];
@@ -64,7 +72,5 @@ public class MinHash {
 		return min;
 	}
 	
-	
-	
-	
 }
+
