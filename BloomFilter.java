@@ -1,15 +1,13 @@
 package mpeiProject;
-import java.util.HashMap;
+
 public class BloomFilter {
 	
-	private boolean set[];
+	private int set[];
 	private int numHashs;
-	private HashMap<String, Integer> counter;
 	
 	public BloomFilter(int N, int numHashs) {
-		set = new boolean[N];
+		set = new int[N];
 		this.numHashs = numHashs;
-		counter = new HashMap<>();
 	}
 	
 	public void insert(String elem) {
@@ -17,27 +15,16 @@ public class BloomFilter {
 		
 		for(int i = 1; i <= numHashs; i++) {
 			str += i;
-			int hash = Math.abs(str.hashCode());
-			hash = Math.abs(hash % set.length);
-			set[hash] = true;
-		}
-		//count 
-		if(!counter.containsKey(elem)) counter.put(elem, 1);
-		else {
-			int num = counter.get(elem);
-			counter.replace(elem, num, num+1);
+			set[hash(str, numHashs)]++;
 		}
 	}
 		
 	public boolean isMember(String elem) {
 		String str = elem;
 		boolean member = true;
-		
-		for(int i=1; i <= numHashs; i++) {
-			str+=i;
-			int hash = Math.abs(str.hashCode());
-			hash = Math.abs(hash % set.length);
-			if(!set[hash]) {
+		for (int i=1; i <= numHashs; i++) {
+			str += i;
+			if(set[hash(str, numHashs)] == 0) {
 				member = false;
 				break;
 			}
@@ -45,9 +32,22 @@ public class BloomFilter {
 		return member;
 	}
 	
-	public int repeats(String elem) {
-		if(!counter.containsKey(elem)) return 0;
-		return counter.get(elem);
+	public int count(String elem) {
+		int min = 10000;
+		
+		for (int i=1; i <= numHashs; i++) {
+			elem += i;
+			int h = hash(elem, numHashs);
+			if (set[h] < min) {
+				min = set[h];
+			}
+		}
+		
+		return min;
 	}
 	
+	private int hash(String elem, int humHashs) {
+		int hash = Math.abs(elem.hashCode());
+		return Math.abs(hash % set.length);
+	}
 }

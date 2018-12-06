@@ -1,4 +1,4 @@
-package mpeiProject;
+package fsd;
 public class BloomFilterTest {
 
 	public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class BloomFilterTest {
 	
 		for(String movie : moviesRep) {
 			bf.insert(movie);
-			System.out.println("Movie "+movie+" repeats "+ bf.count(movie)+" times");
+			System.out.println("Movie "+movie+" repeats "+ bf.repeats(movie)+" times");
 		}
 		
 	}
