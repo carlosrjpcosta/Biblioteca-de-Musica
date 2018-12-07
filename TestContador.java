@@ -1,4 +1,4 @@
-package mpeiproject;
+package mpei_project;
 
 public class TestContador {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package mpeiproject;
+package mpei_project;
 import java.util.HashMap;
 public class ContadorEstocastico {
 	static HashMap<String, Integer> mapProb = new HashMap<>();

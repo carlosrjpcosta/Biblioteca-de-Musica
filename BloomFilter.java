@@ -1,4 +1,4 @@
-package mpeiproject;
+package mpei_project;
 public class BloomFilter {
 	private int set[];
 	private int numHashs;

@@ -1,4 +1,4 @@
-package mpeiproject;
+package mpei_project;
 import java.util.Set;
 public class MinHashTest {
 	

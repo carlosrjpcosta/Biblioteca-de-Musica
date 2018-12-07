@@ -1,4 +1,4 @@
-package mpeiproject;
+package mpei_project;
 import java.util.List;
 import java.util.Scanner;
 public class StartUpEngine {
@@ -42,7 +42,7 @@ public class StartUpEngine {
 			System.out.println("--------Select-----------------\n"
 					+ "1 - Album ID\n"
 					+ "2 - Artist ID\n"
-					+ "3 - Gender\n"
+					+ "3 - Genre\n"
 					+ "0 - End shearching\n"
 					+ "-------------------------------\n");
 			
@@ -78,7 +78,7 @@ public class StartUpEngine {
 					}
 					else continue;		
 				case 3:
-					System.out.println("Play Gender music? (Y/N)");
+					System.out.println("Play Genre music? (Y/N)");
 					op2 = sc.nextLine();
 					
 					if(op2.equals("Y")) {

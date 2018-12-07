@@ -1,4 +1,4 @@
-package mpeiproject;
+package mpei_project;
 import java.io.*;
 import java.util.*;
 import java.nio.file.Files;
@@ -7,7 +7,7 @@ public class BibliotecaMusica {
 	
 	List<String> albuns;				// INTEGER VALUE = 1
 	List<String> artist;				// INTEGER VALUE = 2
-	List<String> gender;				// INTEGER VALUE = 3
+	List<String> genre;				// INTEGER VALUE = 3
 	
 	private static BloomFilter bf;
 	private static MinHash minhash;
@@ -32,13 +32,13 @@ public class BibliotecaMusica {
 			String[] strSpliter = it.next().split(",");
 			albuns.add(strSpliter[1]);
 			artist.add(strSpliter[4]);
-			gender.add(strSpliter[5]);
+			genre.add(strSpliter[5]);
 		}
 		
 		//keps track of witch set to Use
 		map.put(1, albuns);
 		map.put(2, artist);
-		map.put(3, gender);
+		map.put(3, genre);
  	}
 	
 	private static int size(int i) {
